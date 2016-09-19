@@ -17,12 +17,16 @@
 'use strict';
 
 var express = require('express');
+var favicon = require('serve-favicon');
 var path = require('path');
 var app = express();
 
 
 // Use the built-in express middleware for serving static files from './public'
 app.use('/', express.static(path.join(__dirname,'public')));
+app.use(favicon(__dirname + '/public/favicon/favicon.ico'));
+
+app
 
 app.get('/', function (req, res) {
   res.sendFile('index.html');
