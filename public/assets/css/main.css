@@ -65,8 +65,8 @@
 
 	.container.\31 25\25 {
 		width: 100%;
-		max-width: 56.25em;
-		min-width: 45em;
+		max-width: 40em;
+		min-width: 30em;
 	}
 
 	.container.\37 5\25 {
@@ -82,7 +82,7 @@
 	}
 
 	.container {
-		width: 45em;
+		width: 40em;
 	}
 
 	@media screen and (max-width: 1680px) {
@@ -2694,7 +2694,7 @@
 /* One */
 
 	#one:before {
-		background-image: url("../../images/word_cloud.jpg");
+		background-image: url("/assets/images/word_cloud.jpg");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: cover;
