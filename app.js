@@ -19,13 +19,12 @@
 var express = require('express');
 var app = express();
 
-app.set('view engine', 'jade');
 
 // Use the built-in express middleware for serving static files from './public'
 // app.use('/static', express.static('public'));
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index.html');
 });
 
 // Start the server
