@@ -21,10 +21,10 @@ var app = express();
 
 
 // Use the built-in express middleware for serving static files from './public'
-// app.use('/static', express.static('public'));
+app.use('/', express.static(path.join(__dirname,'public')));
 
 app.get('/', function (req, res) {
-  res.render('index.html');
+  res.sendFile('index.html');
 });
 
 // Start the server
