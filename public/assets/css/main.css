@@ -82,7 +82,7 @@
 	}
 
 	.container {
-		width: 43em;
+		width: 45em;
 	}
 
 	@media screen and (max-width: 1680px) {
@@ -132,7 +132,7 @@
 		}
 
 		.container {
-			width: 40em;
+			width: 42em;
 		}
 
 	}
@@ -2487,6 +2487,8 @@
 			display: inline-block;
 			vertical-align: middle;
 			width: 48%;
+			max-width: 300px;
+			max-height: 300px;
 		}
 
 		.features article .image.lefty {
@@ -2684,7 +2686,7 @@
 	}
 
 		#main > section > .container {
-			padding: 6em 0 4em 0;
+			padding: 4em 4em 4em 0;
 		}
 
 		#main > section:first-child {
@@ -2771,7 +2773,7 @@
 		/* Main */
 
 			#main > section > .container {
-				padding: 4em 0 2em 0;
+				padding: 4em 3em 2em 0;
 			}
 
 	}
@@ -3071,7 +3073,7 @@
 		/* Main */
 
 			#main > section > .container {
-				padding: 2em 0 0 0;
+				padding: 2em 1em 0 0;
 			}
 
 		/* One */
