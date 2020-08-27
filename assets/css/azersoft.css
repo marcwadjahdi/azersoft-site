@@ -1,0 +1,255 @@
+@import url(fontawesome-all.min.css);
+
+:root {
+    font-size: 1rem;
+    font-family: 'Open Sans';
+    --bg-first: #23232e;
+    --bg-second: #ffffff;
+    --bg-third: #141418;
+    --txt-first: #b6b6b6;
+    --txt-second: #23232e;
+    --txt-third: #773ed9;
+    --transition-speed: 600ms;
+    --nav-size: 3.5rem;
+    --nav-small: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Mono';
+    font-weight: bold;
+    width: fit-content;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-first);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #3e3e52;
+
+}
+
+.text.first {
+    color: var(--txt-first);
+}
+
+.text.second {
+    color: var(--txt-second);
+}
+
+.text.third {
+    color: var(--txt-third);
+}
+
+.major {
+    border-bottom-color: var(--txt-first);
+    border-bottom-style: dotted;
+    border-bottom-width: thin;
+}
+
+.columns {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column !important;
+    -moz-flex-direction: column !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+}
+
+.row {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: row !important;
+    -moz-flex-direction: row !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+}
+
+.deviconbox i.fa {
+    display: inline !important;
+}
+
+.deviconbox i {
+    width: 2rem !important;
+    height: 2rem !important;
+    line-height: 2rem !important;
+    font-size: 2rem !important;
+}
+
+/** Navbar **/
+.header {
+    background-color: #23232ef1;
+    color: var(--txt-first);
+
+    position: fixed;
+    margin: 0;
+    padding: 0;
+
+    height: var(--nav-size);
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    transition: var(--transition-speed);
+}
+
+.header .logo {
+    margin: 0 0 0 2rem;
+    padding: 0;
+    width: 100%;
+    transition: var(--transition-speed);
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row;
+    flex-direction: row-reverse;
+    margin-right: 2rem;
+    height: var(--nav-size);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    color: var(--txt-first);
+    text-decoration: none;
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--txt-third);
+}
+
+.header.small-nav,
+.header.small-nav .logo,
+.header.small-nav .nav-link {
+    height: var(--nav-small);
+}
+
+/** Content **/
+
+main {
+    margin: 0;
+    padding: 0;
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.section {
+    background-color: var(--bg-second);
+    background: border-box;
+    color: var(--txt-second);
+
+    min-height: 45rem;
+    padding: 0 10rem;
+
+}
+
+.section.alt {
+    background-color: var(--bg-first);
+    color: var(--txt-first);
+}
+
+.section header {
+    -webkit-flex: 0 0 auto;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: brown;
+}
+
+.section .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex: 0 1 auto;
+    -moz-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    background-color: chocolate;
+}
+
+.row-item {
+    padding: 0 2rem 0 0;
+}
+
+.button {
+    background-color: var(--txt-first);
+    display: block;
+    color: var(--txt-first);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.button {
+    border-radius: 1rem;
+}
+
+/** Intro **/
+
+.intro {
+}
+
+.intro header {
+    padding-top: 1rem;
+    place-items: center;
+}
+
+.intro .logo {
+    width: 25rem;
+    background-color: teal;
+}
+
+.intro .catch-phrase {
+    text-transform: uppercase;
+    background-color: teal;
+}
+
+.intro .content {
+}
+
+/** Footer **/
+footer {
+    background-color: var(--bg-first);
+    color: var(--txt-first);
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+/** Screens Specifics **/
+/* Small screens */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+
+}
