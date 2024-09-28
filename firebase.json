@@ -13,7 +13,7 @@
       },
       {
         "source": "/jade-et-marc",
-        "destination": "/wedding.html"
+        "destination": "/wedding/index.html"
       }
     ]
   }
