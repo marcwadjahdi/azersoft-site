@@ -40,6 +40,25 @@ function autoLogin() {
 function formLogin() {
     signIn($('#login-input').val());
 }
+var contentWayPoint = function () {
+    $('.animate-box').waypoint(function (direction) {
+        var box = this.element;
+        if (direction !== 'down') return;
+        if ($(box).hasClass('animated-fast')) return;
+        $(box).addClass('item-animate');
+        setTimeout(function () {
+            $('body .animate-box.item-animate').each(function (k) {
+                var el = $(this);
+                setTimeout(function () {
+                    var effect = el.data('animate-effect') ?? 'fadeInUp';
+                    el.addClass(`${effect} animated-fast`);
+                    el.removeClass('item-animate');
+                }, k * 200, 'easeInOutExpo');
+            });
+
+        }, 100);
+    }, {offset: '85%'});
+};
 
 function signIn(login) {
     let user = findUser(login);
@@ -51,6 +70,9 @@ function signIn(login) {
     $('#navbar').css('display', 'block').addClass('animated-fast fadeInUpMenu')
     // User is authenticated, show the page and store login in cookie
     setCookie(login);
+    setTimeout(function (){
+        contentWayPoint()
+    }, 1000)
 }
 
 function signOut() {

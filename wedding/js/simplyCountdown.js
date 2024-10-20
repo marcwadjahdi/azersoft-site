@@ -98,8 +98,7 @@
             return {
                 days: createCountdownElt(countdown, parameters, 'simply-days-section'),
                 hours: createCountdownElt(countdown, parameters, 'simply-hours-section'),
-                minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section'),
-                seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')
+                minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section')
             };
         }
 
@@ -226,15 +225,10 @@
                         ? parameters.words.minutes + parameters.words.pluralLetter
                         : parameters.words.minutes;
 
-                    secondWord = seconds > 1
-                        ? parameters.words.seconds + parameters.words.pluralLetter
-                        : parameters.words.seconds;
-
                 } else {
                     dayWord = parameters.words.days;
                     hourWord = parameters.words.hours;
                     minuteWord = parameters.words.minutes;
-                    secondWord = parameters.words.seconds;
                 }
 
                 /* display an inline countdown into a span tag */
@@ -242,8 +236,7 @@
                     countdown.innerHTML =
                         days + ' ' + dayWord + ', ' +
                         hours + ' ' + hourWord + ', ' +
-                        minutes + ' ' + minuteWord + ', ' +
-                        seconds + ' ' + secondWord + '.';
+                        minutes + ' ' + minuteWord + ', ' ;
 
                 } else {
                     fullCountDown.days.amount.textContent = (parameters.zeroPad && days.toString().length < 2 ? '0' : '') + days;
@@ -254,9 +247,6 @@
 
                     fullCountDown.minutes.amount.textContent = (parameters.zeroPad && minutes.toString().length < 2 ? '0' : '') + minutes;
                     fullCountDown.minutes.word.textContent = minuteWord;
-
-                    fullCountDown.seconds.amount.textContent = (parameters.zeroPad && seconds.toString().length < 2 ? '0' : '') + seconds;
-                    fullCountDown.seconds.word.textContent = secondWord;
                 }
             };
 

@@ -1,10 +1,14 @@
-@font-face {
+/* @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  src: url("./../fonts/icomoon/icomoon.eot?srf3rx");
+  src: 
+    url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), 
+    url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), 
+    url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), 
+    url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 
 
@@ -17,6 +21,7 @@
   --brand-primary: var(--teracotta); /* Example value for brand primary */
   --brand-primary-80: var(--teracotta-80); /* Example value for brand primary */
   --darkgray: #444444;
+  --lightgray: #CCCCCC;
 }
 
 /* =======================================================
@@ -33,7 +38,13 @@ body {
   background: #fff;
 }
 
+
+.sacramento {
+    font-family: "Sacramento", Arial, serif !important;
+}
+
 #login-page {
+  z-index: 9999;
   position: absolute;
   overflow-x: hidden;
   width: 100vw;
@@ -54,7 +65,7 @@ body {
 #login-form .form-control,
 #login-form .form-control:focus,
 #login-form .form-control:active {
-  color: var(--teracotta) !important;
+  color: white; /*var(--teracotta) !important*/;
   font-weight: 700;
   border: none;
   -webkit-box-shadow: 0px 0px 7px 5px var(--teracotta);
@@ -143,7 +154,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   padding: 20px 0;
   z-index: 1001;
-  background: #FFFFFF44;
+  background: #FFFFFF11;
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav {
@@ -181,13 +192,14 @@ h1, h2, h3, h4, h5, h6, figure {
   font-weight: bold;
   padding: 30px 10px;
   text-transform: uppercase;
-  color: var(--sage-green-80);
+  color: var(--teracotta);
+  text-shadow: var(--darkgray) 1px 0 5px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 .fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {
-  color: var(--darkgray);
+  color: #FFF;
 }
 .fh5co-nav ul li.has-dropdown {
   position: relative;
@@ -237,16 +249,17 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.has-dropdown .dropdown li a {
   padding: 2px 0;
   display: block;
-  color: #999999;
+  color: var(--darkgray);
+  text-shadow: unset !important;
   line-height: 1.2;
   text-transform: none;
   font-size: 15px;
 }
 .fh5co-nav ul li.has-dropdown .dropdown li a:hover {
-  color: #000;
+  color: var(--teracotta);
 }
 .fh5co-nav ul li.has-dropdown:hover a, .fh5co-nav ul li.has-dropdown:focus a {
-  color: var(--darkgray);
+  color: white;
 }
 .fh5co-nav ul li.btn-cta a {
   color: var(--brand-primary);
@@ -272,7 +285,7 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 .fh5co-nav ul li.active > a {
-  color: var(--darkgray) !important;
+  color: var(--lightgray) !important;
 }
 
 #fh5co-counter,
@@ -349,11 +362,13 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
+}
+#login-page .fh5co-cover {
+  height: 100%;
 }
 .fh5co-cover .overlay {
   z-index: 0;
@@ -891,13 +906,14 @@ form label {
   padding: 0;
   color: white;
 }
+
 .fh5co-header .display-tc h1,
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
   margin-bottom: 0px;
   font-size: 100px;
+  font-weight: bold;
   line-height: 1.5;
-  font-family: "Sacramento", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-header .display-tc h1,
@@ -931,16 +947,18 @@ form label {
 #fh5co-counter .display-tc .btn,
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
-  background: #fff !important;
+  background: #ebe7e7 !important;
   color: var(--brand-primary);
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
+  transition: ease-out .2s;
 }
 .fh5co-header .display-tc .btn:hover,
 #fh5co-counter .display-tc .btn:hover,
 .fh5co-cover .display-tc .btn:hover {
-  background: #fff !important;
+  background: var(--brand-primary) !important;
+  color: #ebe7e7 !important;
   -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
@@ -1886,7 +1904,7 @@ form label {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url(../images/loader.gif) center no-repeat #fff;
+  background: url("/wedding/images/loader.gif") center no-repeat #fff;
 }
 
 .js .animate-box {
