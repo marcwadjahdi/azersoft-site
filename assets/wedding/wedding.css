@@ -1,0 +1,335 @@
+@import url(../css/fontawesome-all.min.css);
+
+:root {
+    --teracotta: #B85A24FF;
+    --teracotta-80: #B85A24CC;
+    --teracotta-40: #B85A2466;
+    --sage-green: #90967AFF;
+    --sage-green-80: #90967ACC;
+    --brand-primary: var(--teracotta);
+    --brand-primary-80: var(--teracotta-80);
+    --dark-gray: #444444;
+    --light-gray: #CCCCCC;
+    --text-color: #828282;
+}
+
+.terracotta {
+    color: var(--teracotta)
+}
+
+.sage-green {
+    color: var(--sage-green)
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.text-color {
+    color: var(--text-color)
+}
+
+.sacramento {
+    font-family: "Sacramento", Arial, serif !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url("./images/img_bg_2.jpg") top no-repeat;
+    font-family: "Work Sans", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--teracotta);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+h1, .h1 {
+    font-size: 6rem !important;
+}
+
+h2, .h2 {
+    font-size: 5rem !important;
+}
+
+h3, .h3 {
+    font-size: 4rem !important;
+}
+
+h4, .h4 {
+    font-size: 3rem !important;
+}
+
+h5, .h5 {
+    font-size: 2rem !important;
+}
+
+h6, .h6 {
+    font-size: 1.5rem !important;
+}
+
+
+.section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.btn {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+    color: var(--brand-primary);
+    font-family: "Work Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    padding: 8px 20px;
+}
+
+.btn:hover {
+    background: var(--brand-primary) !important;
+    color: white;
+}
+
+/***** LOGIN ******/
+#login-page {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 9000;
+    overflow: hidden;
+}
+
+#login-page .row {
+    height: 100vh !important;
+}
+
+#login-form {
+    padding: 5rem 2rem;
+    text-shadow: black 1px 1px 1px;
+    color: white;
+}
+
+#login-form .form-control,
+#login-form .form-control:focus,
+#login-form .form-control:active {
+    color: var(--teracotta) !important;
+    text-shadow: black 1px 0px 0px;
+    font-variant: small-caps;
+    font-weight: 650;
+    font-size: 1.6rem;
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 3px var(--teracotta);
+    box-shadow: 0px 0px 5px 3px var(--teracotta);
+    background: #22222277;
+    height: 54px;
+}
+
+#login-form .form-control::placeholder {
+    color: white;
+    font-variant: none !important;
+    font-size: 1rem !important;
+}
+
+#login-form .btn {
+    padding: 15px 20px;
+    border: none !important;
+    text-transform: uppercase;
+    transition: ease-out .2s;
+}
+
+#page {
+    background: url("./images/img_bg_2.jpg") top no-repeat;
+    display: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#logout-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.row1 {
+    background: rgba(0, 0, 0, 0.5);
+    height: 95vh !important;
+}
+
+.j\&m {
+    color: white;
+}
+
+.row2 {
+    background-color: white;
+}
+
+
+.couple-wrap {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    top: 4em;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    animation: pulse 1s ease infinite;
+}
+
+.heart i {
+    font-size: 20px;
+    background: #fff;
+    padding: 20px;
+    color: var(--brand-primary);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.couple-half {
+    width: 50%;
+    float: left;
+}
+
+.couple-half h3 {
+    font-family: "Sacramento", Arial, serif;
+    color: var(--brand-primary);
+    font-size: 30px;
+}
+
+.couple-half .groom, .couple-half .bride {
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.couple-half .groom img, .couple-half .bride img {
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.couple-half .groom {
+    float: right;
+    margin-right: 5px;
+}
+
+.couple-half .bride {
+    float: left;
+    margin-left: 5px;
+}
+
+.couple-half .desc-groom {
+    padding-right: 180px;
+    text-align: right;
+}
+
+.couple-half .desc-bride {
+    padding-left: 180px;
+    text-align: left;
+}
+
+.row3 {
+    background-image:url(./images/img_bg_3.jpg);
+    color: white;
+}
+
+.event-wrap {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    width: 100%;
+    float: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.row3 .event-title {
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+
+.event-wrap p, .event-wrap span,
+.event-wrap p,
+.event-wrap span {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+}
+.event-wrap i,
+ .event-wrap i {
+    color: white;
+    font-size: 20px;
+}
+.event-wrap .event-col,
+.event-wrap .event-col {
+    width: 50%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.row4 {
+    background-color: #34d399;
+}
+
+.row5 {
+    background-color: #a78bfa;
+}

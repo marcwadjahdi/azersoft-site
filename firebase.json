@@ -9,11 +9,7 @@
     "rewrites": [
       {
         "source": "/jade-et-marc",
-        "destination": "/wedding/index.html"
-      },
-      {
-        "source": "/jade-et-marc",
-        "destination": "/wedding/index.html"
+        "destination": "/wedding.html"
       },
       {
         "source": "**",
