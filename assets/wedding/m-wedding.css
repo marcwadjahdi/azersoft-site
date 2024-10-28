@@ -66,6 +66,11 @@
         padding-left: 180px;
         text-align: left;
     }
+
+    .photo-container {
+        width: 98% !important;
+        margin-left: 1rem !important;
+    }
 }
 
 @media screen and (max-width: 480px) {

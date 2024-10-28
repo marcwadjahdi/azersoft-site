@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="assets/wedding/wedding.css"/>
     <link rel="stylesheet" href="assets/wedding/m-wedding.css"/>
     <link rel="stylesheet" href="assets/wedding/simplyCountdown.css"/>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/wedding/simplyCountdown.js"></script>
-    <script src="assets/wedding/login.js"></script>
 </head>
 <body>
 <div id="login-page">
@@ -28,7 +24,7 @@
                 <div class="form-group text-center">
                     <h6 class="white">We Are Getting Married</h6>
                     <h1 class="sacramento j&m">Jade &amp; Marc</h1>
-                    <br />
+                    <br/>
                     <input type="text" class="form-control" id="login-input" aria-describedby="login" placeholder="Nom prénom (ex: Marc WADJAHDI).">
                     <br>
                 </div>
@@ -49,7 +45,7 @@
                 <div class="col-md-12 text-center">
                     <h5 class="white">On se marie !</h5>
                     <h1 class="sacramento j&m">Jade &amp; Marc</h1>
-                    <br />
+                    <br/>
                     <div class="simply-countdown simply-countdown-one"></div>
                     <p><a href="#" class="btn "><strong>Save the date</strong></a></p>
                 </div>
@@ -66,7 +62,7 @@
                     <h6 class="black">Le 12 Avril 2025 à Nouméa</h6>
                 </div>
             </div>
-            <br />
+            <br/>
             <div class="couple-wrap">
                 <div class="couple-half">
                     <div class="groom">
@@ -91,69 +87,47 @@
             </div>
         </div>
     </div>
-
-    <!-- Row 3 -->
+    Row 3
     <div class="section row3">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading ">
-                    <h6>Les moments clés de cette journée</h6>
-                    <h2 class="sacramento">Memento</h2>
+            <div class="row event-wrap text-center">
+                <h2 class="event-title sacramento">Planning</h2>
+                <div class="row">
+                    <div class="col-md-4 event-col">
+                        <i class="fa fa-clock"></i>
+                        <span>11:00</span>
+                        <span>11:30</span>
+                        <span>12:00</span>
+                        <span>14:00</span>
+                        <span>15:00</span>
+                        <span>19:00</span>
+                        <span>00:00</span>
+                    </div>
+                    <div class="col-md-4  event-col">
+                        <i class="fa fa-list"></i>
+                        <span>Cérémonie civile</span>
+                        <span>Photos de groupe</span>
+                        <span>Cortège</span>
+                        <span>Cérémonie Laïc</span>
+                        <span>Vin d'honneur</span>
+                        <span>Soiree</span>
+                        <span>A+ moi j'ai nuit de noces</span>
+                    </div>
+                    <div class="col-md-4  event-col">
+                        <i class="fa fa-map-marker"></i>
+                        <span>Mairie de Nouméa</span>
+                        <span>Mairie de Nouméa</span>
+                        <span>Les Baies</span>
+                        <span>Maison Celiere</span>
+                        <span>Maison Celiere</span>
+                        <span>Q20</span>
+                        <span>&nbsp;</span>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-
-                <div class="col-md-10 col-md-offset-1">
-                    <div id="event-mairie" class="col-md-4 col-sm-4 text-center">
-                        <div class="event-wrap ">
-                            <span class="event-title">Mairie</span>
-                            <div class="event-col">
-                                <i class="fa fa-clock"></i>
-                                <span>11:00</span>
-                                <span>11:30</span>
-                                <span>12:00</span>
-                            </div>
-                            <div class="event-col">
-                                <i class="fa fa-list"></i>
-                                <span>Mairie</span>
-                                <span>Photos</span>
-                                <span>Cortège</span>
-                            </div>
-                            <p>Rejoignez nous d'abord à la mairie de Nouméa.</p>
-                        </div>
-                    </div>
-                    <div id="event-laic" class="col-md-4 col-sm-4 text-center">
-                        <div class="event-wrap ">
-                            <span class="event-title">Cérémonie Laïc</span>
-                            <div class="event-col">
-                                <i class="fa fa-clock"></i>
-                                <span>14:00</span>
-                                <span>15:00</span>
-                            </div>
-                            <div class="event-col">
-                                <i class="fa fa-list"></i>
-                                <span>Cérémonie</span>
-                                <span>Vin d'honneur</span>
-                            </div>
-                            <p>Dans une ambiance intime à la maison Céliere pour nous unir en toute intimité.</p>
-                        </div>
-                    </div>
-                    <div id="event-soiree" class="col-md-4 col-sm-4 text-center">
-                        <div class="event-wrap ">
-                            <span class="event-title">Let's Party</span>
-                            <div class="event-col">
-                                <i class="fa fa-clock"></i>
-                                <span>19:00</span>
-                                <span>00:00</span>
-                            </div>
-                            <div class="event-col">
-                                <i class="fa fa-list"></i>
-                                <span>Q20</span>
-                                <span>A+ moi j'ai nuit de noces</span>
-                            </div>
-                            <p>Entre adultes uniquemenet!</p>
-                        </div>
-                    </div>
+                <div class="row">
+                    <a class="download-link" onclick="downloadPlanning()">
+                        Télécharger le planning
+                    </a>
                 </div>
             </div>
         </div>
@@ -162,15 +136,26 @@
     <!-- Row 4 -->
     <div class="section row4">
         <div class="col text-center">
-            <h2>Row 4</h2>
+            <h2 class="terracotta sacramento">Notre histoire</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
         </div>
     </div>
 
     <!-- Row 5 -->
-    <div class="section  row5">
+    <div class="section row5">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="terracotta sacramento">Nos Souvenirs</h2>
+                <div id="gallery" class="row text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="section row6">
         <div class="col text-center">
-            <h2>Row 5</h2>
+            <h2 class="event-title sacramento">Notre Histoire</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
         </div>
     </div>
@@ -179,6 +164,10 @@
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="assets/wedding/simplyCountdown.js"></script>
+<script src="assets/wedding/wedding.js"></script>
 <script>
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
@@ -205,8 +194,9 @@
                 formLogin()
             }
         });
-        loginInput.focus()
+        loginInput.focus();
         autoLogin();
+        populateGallery();
     })
 
 </script>
