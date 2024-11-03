@@ -43,11 +43,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h5 class="white">On se marie !</h5>
+                    <h4 class="white">12 AVRIL 2025</h4>
                     <h1 class="sacramento j&m">Jade &amp; Marc</h1>
                     <br/>
                     <div class="simply-countdown simply-countdown-one"></div>
-                    <p><a href="#" class="btn "><strong>Save the date</strong></a></p>
+                    <p><a href="#save-date-form" class="btn "><strong>Save the date</strong></a></p>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <div class="col-md-12 text-center">
                     <h2 class="sacramento terracotta">Hello !</h2>
                     <p>Nous vous invitons à célébrer notre marriage</p>
-                    <h6 class="black">Le 12 Avril 2025 à Nouméa</h6>
+                    <h4 class="black">Le 12 Avril 2025 à Nouméa</h4>
                 </div>
             </div>
             <div class="couple-wrap">
@@ -200,10 +200,51 @@
         </div>
     </div>
     <!-- Row 6 -->
-    <div class="section row6">
-        <div class="col text-center">
-            <h2 class="event-title sacramento">Notre Histoire</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+    <div class="section save-date-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="sacramento terracotta">Save the date</h2>
+                    <p>Serez vous des notre ce 12 avril 2025 ?</p>
+                </div>
+            </div>
+            <div id="save-date-form">
+                <div class="form-group text-center">
+                    <form id="saveDateForm">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="ceremonie" name="ceremonie">
+                            <label class="form-check-label" for="ceremonie">Venez vous a la ceremonie Laique:</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="soiree" name="soiree">
+                            <label class="form-check-label" for="soiree">Venez vous a la soiree:</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="allergies">Avez vous des allergies alimentaires ?</label>
+                            <textarea class="form-control" id="allergies" name="allergies" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accompagnement">Serez vous accompagne ?</label>
+                            <textarea class="form-control" id="accompagnement" name="accompagnement" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questions">Avez vous des questions ?</label>
+                            <textarea class="form-control" id="questions" name="questions" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn"><strong>Envoyer</strong></button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -244,6 +285,7 @@
         loginInput.focus();
         autoLogin();
         populateGallery();
+        document.getElementById('saveDateForm').addEventListener('submit', submitForm);
     })
 
 </script>

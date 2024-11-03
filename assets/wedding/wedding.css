@@ -130,6 +130,20 @@ h6, .h6 {
     color: white;
 }
 
+ .form-control,
+ .form-control:focus,
+ .form-control:active {
+    color: var(--teracotta) !important;
+    text-shadow: black 1px 0px 0px;
+    font-variant: small-caps;
+    font-weight: 650;
+    font-size: 1.6rem;
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 3px var(--teracotta);
+    box-shadow: 0px 0px 5px 3px var(--teracotta);
+    height: 54px;
+}
+
 /***** LOGIN ******/
 #login-page {
     background: rgba(0, 0, 0, 0.5);
@@ -153,16 +167,7 @@ h6, .h6 {
 #login-form .form-control,
 #login-form .form-control:focus,
 #login-form .form-control:active {
-    color: var(--teracotta) !important;
-    text-shadow: black 1px 0px 0px;
-    font-variant: small-caps;
-    font-weight: 650;
-    font-size: 1.6rem;
-    border: none;
-    -webkit-box-shadow: 0px 0px 5px 3px var(--teracotta);
-    box-shadow: 0px 0px 5px 3px var(--teracotta);
     background: #22222277;
-    height: 54px;
 }
 
 #login-form .form-control::placeholder {

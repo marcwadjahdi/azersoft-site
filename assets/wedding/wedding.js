@@ -1,4 +1,5 @@
 const COOKIE = 'azerwedding-login';
+const SCRIPT_ID = "AKfycbx041oH5X0gznRyUoKxxCF464Nhxg0uWlYWKCXx4E37KULYE5Ju_AraelizsFrXo7k";
 
 const MAIRIE = 1;   // 001
 const LAIC = 2;     // 010
@@ -160,4 +161,29 @@ function openCarousel(index) {
 
     // Go to the specified index in the carousel
     $('#carouselExample').carousel(index - 1);
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    const form = document.getElementById('saveDateForm');
+    const data = {name: currentUser.name,};
+    new FormData(form).forEach((value, key) => data[key] = value);
+
+
+    fetch(`https://script.google.com/macros/s/${SCRIPT_ID}/exec`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(data),
+    })
+        .then(result => {
+            form.reset();
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
 }
