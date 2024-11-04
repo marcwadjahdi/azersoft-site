@@ -2,7 +2,6 @@
 @media screen and (max-width: 992px) {
 
     .couple-section .couple-half-title {
-        font-family: "Sacramento", Arial, serif;
         color: var(--brand-primary);
     }
 
@@ -107,6 +106,9 @@
         padding: 2.5rem 0 !important;
     }
 
+    .section .container {
+        max-width: 98%;
+    }
 
 
     .planning-section .event-wrap {

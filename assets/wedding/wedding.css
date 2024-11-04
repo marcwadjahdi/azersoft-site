@@ -106,12 +106,16 @@ h6, .h6 {
     width: 100% !important;
 }
 
+.section .container {
+    max-width: 60%;
+}
 
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
     background-color: white;
     color: var(--brand-primary);
+    border-color: var(--brand-primary);
     font-family: "Work Sans", Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -133,15 +137,9 @@ h6, .h6 {
  .form-control,
  .form-control:focus,
  .form-control:active {
-    color: var(--teracotta) !important;
-    text-shadow: black 1px 0px 0px;
-    font-variant: small-caps;
-    font-weight: 650;
-    font-size: 1.6rem;
     border: none;
-    -webkit-box-shadow: 0px 0px 5px 3px var(--teracotta);
-    box-shadow: 0px 0px 5px 3px var(--teracotta);
-    height: 54px;
+    -webkit-box-shadow: 0px 0px 2px 1px var(--teracotta);
+    box-shadow: 0px 0px 2px 1px var(--teracotta);
 }
 
 /***** LOGIN ******/
@@ -167,7 +165,16 @@ h6, .h6 {
 #login-form .form-control,
 #login-form .form-control:focus,
 #login-form .form-control:active {
+    height: 54px;
     background: #22222277;
+    font-variant: small-caps;
+    font-weight: 650;
+    font-size: 1.6rem;
+    color: var(--teracotta) !important;
+    text-shadow: black 1px 0px 0px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 3px var(--teracotta);
+    box-shadow: 0px 0px 5px 3px var(--teracotta);
 }
 
 #login-form .form-control::placeholder {
@@ -501,6 +508,24 @@ h6, .h6 {
     opacity: 1;
 }
 
+.save-date-section .form-group {
+    margin: 0.5rem 0;
+}
+
+.save-date-section label {
+    float: left;
+    margin-right: 1rem;
+}
+.save-date-section .form-check-label {
+    width: 40%;
+}
+.save-date-section input[type=checkbox] {
+    display: inline-block;
+}
+
+.save-date-section .btn {
+    float: right;
+}
 
 .modal {
     top: 30% !important;
