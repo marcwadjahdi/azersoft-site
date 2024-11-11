@@ -1,6 +1,8 @@
 const COOKIE = 'azerwedding-login';
 const SCRIPT_ID = "AKfycbx041oH5X0gznRyUoKxxCF464Nhxg0uWlYWKCXx4E37KULYE5Ju_AraelizsFrXo7k";
 
+const NB_PHOTO = 16
+
 const MAIRIE = 1;   // 001
 const LAIC = 2;     // 010
 const SOIREE = 4;   // 100
@@ -97,13 +99,13 @@ function downloadPlanning() {
 
 function populateGallery() {
     const gallery = $('#gallery')
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= NB_PHOTO; i++) {
         const colDiv = $('<div>')
             .addClass('photo-container')
             .click(() => openCarousel(i));
         // Create the img element with a placeholder or dynamic source
         const img = $('<img>')
-            .attr('src', `assets/wedding/images/gallery-${i}.jpg`)
+            .attr('src', `assets/wedding/images/gallery/${i}.jpg`)
             .attr('alt', `Image ${i}`)
             .addClass('img-fluid')
         const overlayDiv = $('<div>').addClass('photo-overlay');
@@ -117,16 +119,16 @@ function populateGallery() {
 
 function openCarousel(index) {
     let images = ""
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= NB_PHOTO; i++) {
         images += `<div class="carousel-item ${i === index ? 'active' : ''}">`
-        images += `<img src="assets/wedding/images/gallery-${i}.jpg" class="d-block w-100" ">`
+        images += `<img src="assets/wedding/images/gallery/${i}.jpg" class="d-block w-100" ">`
         images += `</div>`
     }
 
     // Create modal HTML
     const modalHtml = `
             <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body p-0">
                             <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -135,12 +137,10 @@ function openCarousel(index) {
                                 </div>
                                 <!-- Carousel Controls -->
                                 <a class="carousel-control-prev" onclick="$('#carouselExample').carousel('prev')" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
+                                    <i class="fa fa-chevron-left terracotta"></i>
                                 </a>
                                 <a class="carousel-control-next" onclick="$('#carouselExample').carousel('next')" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
+                                    <i class="fa fa-chevron-right terracotta"></i>
                                 </a>
                             </div>
                         </div>
@@ -186,4 +186,8 @@ function submitForm(event) {
             console.error('Error:', error);
         });
 
+}
+
+function handleHabilitations() {
+    $('.evening-element').forEach(it=> it.destroy())
 }

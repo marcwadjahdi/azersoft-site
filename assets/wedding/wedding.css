@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin: 0.5rem 0;
 }
 
 h1, .h1 {
@@ -97,12 +97,12 @@ h6, .h6 {
 
 
 .section {
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 0;
     width: 100% !important;
 }
 
@@ -299,6 +299,7 @@ h6, .h6 {
 .planning-section {
     background: url("./images/img_bg_3.jpg") no-repeat;
     background-size: cover;
+    background-position-y: -250px;
     color: white;
 }
 
@@ -332,6 +333,7 @@ h6, .h6 {
     display: block;
     color: rgba(255, 255, 255, 0.8);
     margin: 0.3rem 0;
+    height: 3rem;
 }
 .planning-section .event-wrap i {
     color: white;
@@ -346,8 +348,21 @@ h6, .h6 {
     margin: 4rem 0 0;
 }
 
-.timeline-section {
+.infos-section {
     background-color: var(--bg-default);
+}
+
+.infos-section .color-theme-item {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    position: relative;
+    top: 0.75rem;
+}
+
+.timeline-section {
+
 }
 
 .timeline-section .timeline {
@@ -382,12 +397,13 @@ h6, .h6 {
     width: 40%;
     float: left;
     border: 1px solid #d4d4d4;
-    padding: 30px;
+    padding: 15px;
     position: relative;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     border-radius: 4px;
+    background: white;
 }
 .timeline-section .timeline-item > .timeline-panel:before {
     position: absolute;
@@ -464,7 +480,7 @@ h6, .h6 {
 }
 
 .memories-section {
-    background-color: var(--bg-alternate);
+    background-color: var(--bg-default);
     height: fit-content !important;
 }
 
@@ -476,17 +492,17 @@ h6, .h6 {
 }
 
 .memories-section .photo-container {
-    padding: 5px;
     aspect-ratio: 1 / 1; /* Keeps a 1:1 aspect ratio for the images */
     overflow: hidden;
-    width: 30%;
+    width: 22%;
     margin: 0.5rem;
     cursor: pointer;
     position: relative;
-    border-radius: 10px; /* Rounded corners */
+     /* Rounded corners */
 }
 
-.memories-section .photo-container img {position: absolute;
+.memories-section .photo-container img {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%; /* Make sure the image fills the column */
@@ -506,6 +522,11 @@ h6, .h6 {
 
 .memories-section .photo-container:hover .photo-overlay {
     opacity: 1;
+}
+
+.timeline-section {
+    background: url("./images/img_bg_1.jpg") no-repeat;
+    background-size: cover;
 }
 
 .save-date-section .form-group {
@@ -528,5 +549,16 @@ h6, .h6 {
 }
 
 .modal {
-    top: 30% !important;
+    top: 0% !important;
+}
+.carousel-control-prev {
+    left: -15px;
+}
+.carousel-control-next {
+    right: -15px;
+}
+.modal .carousel-control-prev, .modal .carousel-control-next {
+    text-decoration: none;
+    height: 80%;
+    top: 10%;
 }

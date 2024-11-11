@@ -1,4 +1,3 @@
-
 @media screen and (max-width: 992px) {
 
     .couple-section .couple-half-title {
@@ -8,33 +7,44 @@
     .couple-section .couple-wrap {
         width: 100% !important;
     }
+
     .couple-section .heart {
         display: none;
     }
+
     .couple-section .couple-half {
         width: 100% !important;
         text-align: center !important;
         margin: 0.5rem 0;
     }
+
     .couple-section .couple-half .groom {
         float: right !important;
         margin-right: 5px !important;
     }
+
     .couple-section .couple-half .bride {
         float: left !important;
         margin-left: 5px !important;
     }
+
     .couple-section .couple-half .desc-groom {
         padding-right: 180px !important;
         text-align: right !important;
     }
+
     .couple-section .couple-half .desc-bride {
         padding-left: 180px !important;
         text-align: left !important;
     }
+
     .couple-section .photo-container {
         width: 98% !important;
         margin-left: 1rem !important;
+    }
+
+    .planning-section {
+        background-position-y: unset !important;
     }
 
 
@@ -71,15 +81,30 @@
         left: -14px;
         right: auto;
     }
+
+
+    .modal {
+        top: 15% !important;
+    }
+
+    .modal-dialog {
+        max-width: 500px;
+    }
+
+    .carousel-item {
+        max-width: 500px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     body::-webkit-scrollbar {
         width: 0.25rem;
     }
+
     body::-webkit-scrollbar-track {
         background: transparent;
     }
+
     body::-webkit-scrollbar-thumb {
         background: transparent;
     }
@@ -87,21 +112,27 @@
     h1, .h1 {
         font-size: 4rem !important;
     }
+
     h2, .h2 {
         font-size: 3rem !important;
     }
+
     h3, .h3 {
         font-size: 2.5rem !important;
     }
+
     h4, .h4 {
         font-size: 2rem !important;
     }
+
     h5, .h5 {
         font-size: 1.7rem !important;
     }
+
     h6, .h6 {
         font-size: 1.2rem !important;
     }
+
     .section {
         padding: 2.5rem 0 !important;
     }
@@ -114,6 +145,7 @@
     .planning-section .event-wrap {
         margin: 1rem;
     }
+
     .planning-section .event-col {
         width: 40%;
     }
@@ -122,9 +154,27 @@
         width: 20% !important;
     }
 
+    .timeline-section .timeline-item .timeline-badge {
+        width: 80px;
+        height: 80px;
+        margin-left: 0px !important;
+    }
+
     .memories-section .photo-container {
-         width: 45%;
-     }
+        width: 45%;
+    }
+
+    .modal {
+        top: 25% !important;
+    }
+
+    .modal-dialog {
+        max-width: 400px;
+    }
+
+    .carousel-item {
+        max-width: 400px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -137,19 +187,23 @@
         width: 100% !important;
         height: 140px !important;
     }
+
     .couple-section .couple-half .groom img, .couple-half .bride img {
         width: 120px !important;
         height: 120px !important;
         margin: 0 auto !important;
     }
+
     .couple-section .couple-half .groom, .couple-half .bride {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+
     .couple-section .couple-half .desc-groom {
         padding-right: 0 !important;
         text-align: center !important;
     }
+
     .couple-section .couple-half .desc-bride {
         padding-left: 0 !important;
         text-align: center !important;
@@ -160,18 +214,46 @@
     }
 
     .timeline-section .timeline-item .timeline-panel {
-        width: 75% !important;
+        width: 80% !important;
     }
+
     .timeline-section .timeline-item .timeline-panel:before {
         top: 30px;
     }
+
     .timeline-section .timeline-item .timeline-panel:after {
         top: 31px;
     }
+
     .timeline-section .timeline-item .timeline-badge {
         width: 60px;
         height: 60px;
         margin-left: -20px !important;
     }
+
+    .modal {
+        top: 25% !important;
+        left: 10%;
+    }
+
+    .modal-dialog {
+        max-width: 300px;
+    }
+
+    .carousel-item {
+        max-width: 300px;
+    }
 }
 
+
+@media screen and (max-width: 340px) {
+
+    .memories-section .photo-container {
+        width: 90%;
+    }
+
+    .modal {
+        top: 25% !important;
+        left: 0%;
+    }
+}
