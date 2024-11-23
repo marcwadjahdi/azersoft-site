@@ -1,5 +1,6 @@
 @import url(../css/fontawesome-all.min.css);
 
+
 :root {
     --teracotta: #B85A24FF;
     --teracotta-80: #B85A24CC;
@@ -54,15 +55,15 @@ body {
     padding: 0;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, textarea::-webkit-scrollbar {
     width: 0.25rem;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
     background: var(--light-gray);
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb {
     background: var(--teracotta);
 }
 
@@ -299,7 +300,8 @@ h6, .h6 {
 .planning-section {
     background: url("./images/img_bg_3.jpg") no-repeat;
     background-size: cover;
-    background-position-y: -250px;
+    background-position-y: -230px;
+    background-position: center;
     color: white;
 }
 
@@ -361,8 +363,12 @@ h6, .h6 {
     top: 0.75rem;
 }
 
-.timeline-section {
 
+
+.timeline-section {
+    background: url("./images/img_bg_1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .timeline-section .timeline {
@@ -480,7 +486,7 @@ h6, .h6 {
 }
 
 .memories-section {
-    background-color: var(--bg-default);
+    background-color: var(--bg-alternate);
     height: fit-content !important;
 }
 
@@ -488,17 +494,21 @@ h6, .h6 {
     justify-content: left;
     width: 100%;
     padding: 0;
-    margin: 0.5rem;
+    margin: 5rem 0.5rem;
+    position: relative;
+    min-height: 60vh;
 }
 
 .memories-section .photo-container {
     aspect-ratio: 1 / 1; /* Keeps a 1:1 aspect ratio for the images */
     overflow: hidden;
-    width: 22%;
+    width: 35%;
     margin: 0.5rem;
     cursor: pointer;
-    position: relative;
-     /* Rounded corners */
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    transition: ease 1s;
 }
 
 .memories-section .photo-container img {
@@ -524,21 +534,16 @@ h6, .h6 {
     opacity: 1;
 }
 
-.timeline-section {
-    background: url("./images/img_bg_1.jpg") no-repeat;
-    background-size: cover;
-}
-
 .save-date-section .form-group {
     margin: 0.5rem 0;
 }
 
 .save-date-section label {
     float: left;
-    margin-right: 1rem;
 }
 .save-date-section .form-check-label {
-    width: 40%;
+    width: 97%;
+    float: right;
 }
 .save-date-section input[type=checkbox] {
     display: inline-block;
@@ -561,4 +566,13 @@ h6, .h6 {
     text-decoration: none;
     height: 80%;
     top: 10%;
+}
+
+
+.swal2-container {
+    z-index: 999999;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    background-color: var(--teracotta) !important;
 }

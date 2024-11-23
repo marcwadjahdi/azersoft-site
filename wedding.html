@@ -11,10 +11,15 @@
     <!-- CSS -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/wedding/bootstrap.min.css"/>
     <link rel="stylesheet" href="assets/wedding/wedding.css"/>
     <link rel="stylesheet" href="assets/wedding/m-wedding.css"/>
     <link rel="stylesheet" href="assets/wedding/simplyCountdown.css"/>
+
+    <!-- SweetAlert2 CSS -->
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div id="login-page">
@@ -22,7 +27,6 @@
         <div class="col-md-6 col-md-offset-2 text-center">
             <div id="login-form">
                 <div class="form-group text-center">
-                    <h6 class="white">We Are Getting Married</h6>
                     <h1 class="sacramento j&m">Jade &amp; Marc</h1>
                     <br/>
                     <input type="text" class="form-control" id="login-input" aria-describedby="login" placeholder="Nom prénom (ex: Marc WADJAHDI).">
@@ -110,8 +114,8 @@
                         <span>12:00</span>
                         <span>14:00</span>
                         <span>15:00</span>
-                        <span>19:00</span>
-                        <span>00:00</span>
+                        <span class="evening-element">19:00</span>
+                        <span class="evening-element">A définir</span>
                     </div>
                     <div class="event-col">
                         <i class="fa fa-list"></i>
@@ -120,18 +124,18 @@
                         <span>Cortège</span>
                         <span>Cérémonie Laïc</span>
                         <span>Vin d'honneur</span>
-                        <span>Soirée</span>
-                        <span>Fin de soirée</span>
+                        <span class="evening-element">Soirée</span>
+                        <span class="evening-element">Fin de soirée</span>
                     </div>
                     <div class="event-col">
                         <i class="fa fa-map-marker"></i>
                         <span>Mairie de Nouméa</span>
                         <span>Mairie de Nouméa</span>
                         <span>Les Baies</span>
-                        <span>Maison Celiere</span>
-                        <span>Maison Celiere</span>
-                        <span>Q20</span>
-                        <span>&nbsp;</span>
+                        <span>A définir</span>
+                        <span>A définir</span>
+                        <span class="evening-element">Q20</span>
+                        <span class="evening-element">&nbsp;</span>
                     </div>
                 </div>
             </div>
@@ -150,13 +154,16 @@
                 <dl>
                     <dt class="text-danger">⚠ Attention ⚠</dt>
                     <dd class="text-danger">Pas d'enfin lors de la soirée penser à prévoir le babysitting</dd>
-
-                    <dt>Le thème couleur</dt>
+                    <hr/>
+                    <dt class="mt-3">Le thème couleur</dt>
                     <dd><span class="color-theme-item" style="background-color: #B85A23;"></span> - #B85A23 : Terracotta - Terre Cuite - Cuivre brûlé</dd>
                     <dd><span class="color-theme-item" style="background-color: #C8CDB9;"></span> - #C8CDB9 : Vert sauge clair</dd>
                     <dd><span class="color-theme-item" style="background-color: #8F967A;"></span> - #8F967A : Vert olive grisâtre ou Vert mousse</dd>
-
-                    <dt class="text-danger">Pour ces dames</dt>
+                    <hr/>
+                    <dt class="evening-element mt-3">Parking</dt>
+                    <dd class="evening-element">Le parking du <strong>Banian</strong> est gratuit le soir donc n'hésité pas a vous garer pour la soirée au <strong>Q20</strong></dd>
+                    <hr/>
+                    <dt class="text-danger mt-3">Pour ces dames</dt>
                     <dd class="text-danger">Vous connaissez les règles, pas de rouge ni de blanc...</dd>
                 </dl>
             </div>
@@ -179,7 +186,7 @@
             </div>
             <ul class="timeline">
                 <li class="timeline-item">
-                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/groom.jpg);"></div>
+                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/meet.svg);"></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h6 class="terracotta">We Meet</h6>
@@ -191,7 +198,7 @@
                     </div>
                 </li>
                 <li class="timeline-item">
-                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/groom.jpg);"></div>
+                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/date.svg);"></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h6 class="terracotta">First Date</h6>
@@ -203,7 +210,7 @@
                     </div>
                 </li>
                 <li class="timeline-item">
-                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/ring.jpg);"></div>
+                    <div class="timeline-badge" style="background-image:url(assets/wedding/images/propose.svg);"></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h6 class="terracotta">The Proposal</h6>
@@ -227,9 +234,7 @@
                     <p>Tellement plus a venir.</p>
                 </div>
             </div>
-            <div class="row text-center">
-                <div id="gallery" class="row text-center">
-                </div>
+            <div id="gallery">
             </div>
         </div>
     </div>
@@ -251,13 +256,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-check-label" for="ceremonie">Venez vous a la ceremonie Laique :</label>
+                        <label>Serez vous des notre à :</label>
+                        <br/><br/>
+                        <input type="checkbox" class="form-check-input" id="mairie" name="mairie">
+                        <label class="form-check-label">La cérémonie civile</label>
+                        <br/><br/>
+                        <label class="form-check-label" for="ceremonie">La cérémonie laïc</label>
                         <input type="checkbox" class="form-check-input" id="ceremonie" name="ceremonie">
-                    </div>
-
-                    <div class="form-group" id="soiree-checkbox">
-                        <label class="form-check-label" for="soiree">Venez vous a la soiree :</label>
-                        <input type="checkbox" class="form-check-input" id="soiree" name="soiree">
+                        <br/> <br/>
+                        <label class="form-check-label evening-element" for="soiree">La soirée</label>
+                        <input type="checkbox" class="form-check-input evening-element" id="soiree" name="soiree">
                     </div>
 
                     <div class="form-group">
@@ -266,7 +274,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="accompagnement">Serez vous accompagne ?</label>
+                        <label for="accompagnement">Serez vous accompagné(e) ?</label>
                         <textarea class="form-control" id="accompagnement" name="accompagnement" rows="3" placeholder="La liste des personnes de votre 'groupe'"></textarea>
                     </div>
 

@@ -1,11 +1,22 @@
 const COOKIE = 'azerwedding-login';
-const SCRIPT_ID = "AKfycbx041oH5X0gznRyUoKxxCF464Nhxg0uWlYWKCXx4E37KULYE5Ju_AraelizsFrXo7k";
+const SCRIPT_ID = "AKfycbwx_kckFb439ramFSboqinLQrtXV3uw16EA1AgX97FS2pCq0hPVJv137LZGA16SVFY";
 
 const NB_PHOTO = 16
+const TRANSLATIONS = {
+    "(min-width: 1000px)": {x: 150, y: 45,},
+    "(max-width: 992px)": {x: 75, y: 37,},
+    "(max-width: 768px)": {x: 60, y: 30,},
+    "(max-width: 480px)": {x: 45, y: 22,},
+    "(max-width: 340px)": {x: 30, y: 15,},
+}
+const ROTATION_RANGE = 60; // Full range: -55 to 55 degrees
+const NOISE_RANGE = 7; // Noise range: ±2 to ±4 degrees
 
 const MAIRIE = 1;   // 001
 const LAIC = 2;     // 010
 const SOIREE = 4;   // 100
+
+const RSVP_RECIPIENTS = ['marc.wadjahdi@gmail.com']
 
 let currentUser = null;
 
@@ -18,9 +29,45 @@ function isInvitedTo(invitation, event) {
 
 // Step 1: Declare valid logins
 const validLogins = [
-    {name: 'Marc WADJAHDI', habilitation: MAIRIE + LAIC + SOIREE},
-    {name: 'Jade CORNET', habilitation: MAIRIE + LAIC + SOIREE},
-    {name: 'test', habilitation: MAIRIE + LAIC},
+    {names: ['Test1'], habilitation: MAIRIE + LAIC},
+    {names: ['Test2'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Marc Wadjahdi', 'Kako', 'Mumble', 'Marcus Pupuce'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Corinne Wadjahdi', 'Coco des iles'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Jannick Wadjahdi', 'Kakounet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Jacques Wadjahdi', 'Nanoute'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Vivien Didelot'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Cyril Domergue', 'Diane Le Franc'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Fabien Barretteau', 'Fabien Bertherat', 'Aurélie Barbeau'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Alexandre Thomas', 'Clémence Thomas'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Olivier Thomas'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Nicolas Yamamoto'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Clarisse & Luc'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Randolph Higa', 'Mylenka Djariman'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Sebastien & Christina'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Yverick Hermant'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Roby Didelot', 'Serge Didelot'], habilitation: MAIRIE + LAIC},
+    {names: ['Daniel Domergue', 'Marie-Francoise', 'Céline Domergue'], habilitation: MAIRIE + LAIC},
+    {names: ['Vincent Domergue', 'Christelle Domergue'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Jade Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Robin Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Romane Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Renault Cornet', 'Sylvie MARBOEUF', 'Claude Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Eric Esposito', 'Brigitte Esposito'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Philippe Guillou', 'Giliane Guillou', 'Loic Guillou'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Tanguy Boinet', 'Anne-Laure Boinet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Julie & Hugo'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Marine Teral', 'Benoit'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Gabrielle Winter', 'Charles Mori'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Boris & Louise'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Pauline Feuillet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Hadrian Moret'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Clovis Rivière'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Patricia Merignac'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Jocelyne Merignac', 'Paul Merignac', 'Virginie Merignac'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Natalie Brinon', 'Steeve Brinon', 'Achille Brinon'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Delphine Tanti', 'Louis Tanti-Cornet', 'Ines Tanti-Cornet'], habilitation: MAIRIE + LAIC},
+    {names: ['Adrien Giacinti'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Jennifer Hervé', 'Lucas Foucart'], habilitation: MAIRIE + LAIC + SOIREE},
 ];
 
 // Helper function to normalize input (remove accents, lowercase, trim, and remove spaces)
@@ -36,7 +83,7 @@ function normalizeInput(input) {
 // Check if login is valid by comparing normalized input with valid user IDs
 function findUser(login) {
     const normalizedLogin = normalizeInput(login ?? '');
-    return validLogins.find(user => normalizeInput(user.name) === normalizedLogin);
+    return validLogins.find(user => user.names.map(normalizeInput).includes(normalizedLogin));
 }
 
 function autoLogin() {
@@ -45,13 +92,25 @@ function autoLogin() {
 }
 
 function formLogin() {
-    signIn($('#login-input').val());
+    try {
+        signIn($('#login-input').val());
+    } catch (e) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Authentification',
+            text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
+            confirmButtonText: 'OK',
+        });
+    }
 }
 
 function signIn(login) {
     let user = findUser(login);
 
-    if (!user) return signOut();
+    if (!user) {
+        signOut();
+        throw new Error("Sign In Exception")
+    }
 
     $('#login-page').css('display', 'none')
     $('#page').css('display', 'block').addClass('animated-fast fadeInUpMenu')
@@ -59,6 +118,12 @@ function signIn(login) {
     // User is authenticated, show the page and store login in cookie
     setCookie(login);
     currentUser = user;
+    // Destroy elements that are only for the evening
+    if (!isInvitedTo(user.habilitation, SOIREE))
+        $('.evening-element').each(function () {
+            $(this).remove(); // Removes the element from the DOM
+        });
+    $('#accompagnement').val(user.names.join('\n'))
 }
 
 function signOut() {
@@ -86,12 +151,13 @@ function setCookie(login) {
 }
 
 // </editor-fold>
+
 function downloadPlanning() {
     // Create a new <a> element
     const link = document.createElement("a");
     link.style.display = "none"; // Hide the link
     link.download = "12_04_2025_jade_et_marc_planning_marriage.pdf";
-    link.href = `assets/wedding/plannings/${isInvitedTo(currentUser.habilitation, SOIREE) ? 1 : 2}.pdf`;
+    link.href = `assets/wedding/plannings/guide_${isInvitedTo(currentUser.habilitation, SOIREE) ? 1 : 2}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link); // Remove the link after clicking
@@ -99,6 +165,18 @@ function downloadPlanning() {
 
 function populateGallery() {
     const gallery = $('#gallery')
+
+    const topPhotoIndex = Math.floor(Math.random() * NB_PHOTO) + 1;
+
+    let translationXRange
+    let translationYRange
+    Object.keys(TRANSLATIONS).forEach((media) => {
+        if (window.matchMedia(media).matches) {
+            translationXRange = TRANSLATIONS[media].x
+            translationYRange = TRANSLATIONS[media].y
+        }
+    })
+
     for (let i = 1; i <= NB_PHOTO; i++) {
         const colDiv = $('<div>')
             .addClass('photo-container')
@@ -108,7 +186,26 @@ function populateGallery() {
             .attr('src', `assets/wedding/images/gallery/${i}.jpg`)
             .attr('alt', `Image ${i}`)
             .addClass('img-fluid')
+
+        let finalAngle = 0
+        let zIndex = 1000
+        let translateX = 0
+        let translateY = 0
+        if (i !== topPhotoIndex) {
+            const step = (ROTATION_RANGE * 2) / (NB_PHOTO - 1); // Calculate step size
+            const baseAngle = -ROTATION_RANGE + (i - 2) * step; // Calculate base angle
+            const noise = (Math.random() * NOISE_RANGE * 2) - NOISE_RANGE; // Add random noise ±2-4°
+
+            translateX = (Math.random() * translationXRange * 2) - translationXRange; // ±20px
+            translateY = (Math.random() * translationYRange * 2) - translationYRange; // ±20px
+
+            finalAngle = baseAngle + noise;
+            zIndex -= (2 * i)
+        }
+        colDiv.css({transform: `rotate(${finalAngle}deg) translate(${translateX}px, ${translateY}px)`, zIndex});
+
         const overlayDiv = $('<div>').addClass('photo-overlay');
+
 
         // Append the image to the column div, then the div to the gallery
         colDiv.append(img);
@@ -165,29 +262,76 @@ function openCarousel(index) {
 
 function submitForm(event) {
     event.preventDefault();
-    const form = document.getElementById('saveDateForm');
-    const data = {name: currentUser.name,};
-    new FormData(form).forEach((value, key) => data[key] = value);
 
+    const {
+        email,
+        mairie,
+        ceremonie,
+        soiree,
+        allergies,
+        accompagnement,
+        questions
+    } = Object.fromEntries(new FormData(document.getElementById('saveDateForm')));
 
-    fetch(`https://script.google.com/macros/s/${SCRIPT_ID}/exec`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        mode: 'no-cors',
-        body: JSON.stringify(data),
-    })
-        .then(result => {
-            form.reset();
-            console.log('Success:', result);
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    // Check if the email format is valid
+    if (!email || !$('#email')[0].checkValidity()) {
+        Swal.fire({
+            icon: email ? 'error' : 'warning',
+            title: email ? 'Email invalide' : 'Champ requis',
+            text: email ? 'Veuillez saisir une adresse email valide!' : 'Veuillez renseigner un email svp!',
+            confirmButtonText: 'OK'
         });
+        return;
+    }
 
-}
+    const names = currentUser.names.join(', ');
+    const subject = `RSVP de ${names}`;
+    const body = `RSVP de ${names} 
+      
+      Email: ${email}
+      
+      Attending the town hall : ${mairie ? 'Yes' : 'No'}
+      Attending the ceremony: ${ceremonie ? 'Yes' : 'No'}
+      Attending the party: ${soiree ? 'Yes' : 'No'}
+      
+      Food allergies: 
+      ${allergies || 'None'}
+      
+      Accompaniment: 
+      ${accompagnement || 'None'}
+      
+      Questions:
+       ${questions || 'None'}
+      
+      Thank you!
+    `
 
-function handleHabilitations() {
-    $('.evening-element').forEach(it=> it.destroy())
+
+    RSVP_RECIPIENTS.forEach(to => {
+        fetch(`https://script.google.com/macros/s/${SCRIPT_ID}/exec`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'no-cors',
+            body: JSON.stringify({to, subject, body,}),
+        })
+            .then(result => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Merci!',
+                    text: 'Votre réponse a été envoyé avec succès!',
+                    confirmButtonText: 'Super'
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Envoi',
+                    text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
+                    confirmButtonText: 'OK',
+                });
+
+            })
+    })
 }
