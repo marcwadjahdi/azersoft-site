@@ -92,16 +92,7 @@ function autoLogin() {
 }
 
 function formLogin() {
-    try {
-        signIn($('#login-input').val());
-    } catch (e) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Authentification',
-            text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
-            confirmButtonText: 'OK',
-        });
-    }
+    signIn($('#login-input').val());
 }
 
 function signIn(login) {
@@ -109,7 +100,12 @@ function signIn(login) {
 
     if (!user && !!login) {
         signOut();
-        throw new Error("Sign In Exception")
+        return Swal.fire({
+            icon: 'error',
+            title: 'Authentification',
+            text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
+            confirmButtonText: 'OK',
+        });
     }
 
     $('#login-page').css('display', 'none')
@@ -123,6 +119,7 @@ function signIn(login) {
         $('.evening-element').remove();
     }
     $('#accompagnement').val(user.names.join('\n'))
+    populateGallery();
 }
 
 function signOut() {
@@ -164,6 +161,8 @@ function downloadPlanning() {
 
 function populateGallery() {
     const gallery = $('#gallery')
+
+    gallery.empty()
 
     const topPhotoIndex = Math.floor(Math.random() * NB_PHOTO) + 1;
 
