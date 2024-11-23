@@ -98,14 +98,16 @@ function formLogin() {
 function signIn(login) {
     let user = findUser(login);
 
-    if (!user && !!login) {
+    if (!user) {
         signOut();
-        return Swal.fire({
-            icon: 'error',
-            title: 'Authentification',
-            text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
-            confirmButtonText: 'OK',
-        });
+        if (!!login)
+            Swal.fire({
+                icon: 'error',
+                title: 'Authentification',
+                text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
+                confirmButtonText: 'OK',
+            });
+        return
     }
 
     $('#login-page').css('display', 'none')
