@@ -16,7 +16,7 @@ const MAIRIE = 1;   // 001
 const LAIC = 2;     // 010
 const SOIREE = 4;   // 100
 
-const RSVP_RECIPIENTS = ['marc.wadjahdi@gmail.com']
+const RSVP_RECIPIENTS = ['marc.wadjahdi@gmail.com', 'jadecornet1@gmail.com']
 
 let currentUser = null;
 
