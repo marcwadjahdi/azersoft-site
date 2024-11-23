@@ -31,6 +31,7 @@ function isInvitedTo(invitation, event) {
 const validLogins = [
     {names: ['Test1'], habilitation: MAIRIE + LAIC},
     {names: ['Test2'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Agence Unicorn', 'Unicorn', 'Licorne', 'Gros la Corne'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Marc Wadjahdi', 'Kako', 'Mumble', 'Marcus Pupuce'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Corinne Wadjahdi', 'Coco des iles'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Jannick Wadjahdi', 'Kakounet'], habilitation: MAIRIE + LAIC + SOIREE},
@@ -102,12 +103,7 @@ function signIn(login) {
     if (!user) {
         signOut();
         if (!!login)
-            Swal.fire({
-                icon: 'error',
-                title: 'Authentification',
-                text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
-                confirmButtonText: 'OK',
-            });
+            alertError('Authentification');
         return
     }
 
@@ -298,7 +294,7 @@ function submitForm(event) {
       Food allergies: 
       ${allergies || 'None'}
       
-      Accompaniment: 
+      Person(s) in the group : 
       ${accompagnement || 'None'}
       
       Questions:
@@ -324,15 +320,20 @@ function submitForm(event) {
                     text: 'Votre réponse a été envoyé avec succès!',
                     confirmButtonText: 'Super'
                 });
+                const form = $('#save-date-form')
+                form.empty()
+                form.addClass('row text-center')
+                form.append($('p').append('Si vous avez oublié quoi que ce soit, vous pouvez directement nous contacter.'))
             })
-            .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Envoi',
-                    text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
-                    confirmButtonText: 'OK',
-                });
-
-            })
+            .catch(error => alertError('Soumission du Formulaire'))
     })
+}
+
+function alertError(title) {
+    Swal.fire({
+        icon: 'error',
+        title,
+        text: `Une erreur s'est produite, si elle persiste veuillez contacter votre administrateur. \n marc.wadjahdi@gmail.com`,
+        confirmButtonText: 'OK',
+    });
 }

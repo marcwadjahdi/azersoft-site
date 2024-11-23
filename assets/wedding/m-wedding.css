@@ -173,7 +173,7 @@
     }
 
     .memories-section #gallery {
-        min-height: 40vh;
+        min-height: 50vh;
     }
 
     .memories-section .photo-container {
@@ -253,6 +253,7 @@
 
     .memories-section #gallery {
         min-height: 40vh;
+        margin: 2rem 0;
     }
 
     .memories-section .photo-container {
