@@ -107,7 +107,7 @@ function formLogin() {
 function signIn(login) {
     let user = findUser(login);
 
-    if (!user) {
+    if (!user && !!login) {
         signOut();
         throw new Error("Sign In Exception")
     }
