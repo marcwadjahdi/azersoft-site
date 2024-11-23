@@ -119,10 +119,9 @@ function signIn(login) {
     setCookie(login);
     currentUser = user;
     // Destroy elements that are only for the evening
-    if (!isInvitedTo(user.habilitation, SOIREE))
-        $('.evening-element').each(function () {
-            $(this).remove(); // Removes the element from the DOM
-        });
+    if (!isInvitedTo(user.habilitation, SOIREE)) {
+        $('.evening-element').remove();
+    }
     $('#accompagnement').val(user.names.join('\n'))
 }
 
