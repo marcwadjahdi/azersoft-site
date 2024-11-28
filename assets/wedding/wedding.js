@@ -44,7 +44,7 @@ const validLogins = [
     {names: ['Nicolas Yamamoto'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Clarisse Devillers', 'Luc Devillers'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Randolph Higa', 'Mylenka Djariman'], habilitation: MAIRIE + LAIC},
-    {names: ['Sebastien Perault', 'kristina Perault'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Sebastien Perault', 'Khrystyna Perault'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Yverick Hermant'], habilitation: MAIRIE + LAIC},
     {names: ['Roby Didelot', 'Serge Didelot'], habilitation: MAIRIE + LAIC},
     {names: ['Daniel Domergue', 'Marie-Francoise', 'Céline Domergue'], habilitation: MAIRIE + LAIC},
@@ -57,7 +57,6 @@ const validLogins = [
     {names: ['Eric Esposito', 'Brigitte Esposito'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Philippe Guillou', 'Giliane Guillou', 'Loic Guillou'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Tanguy Boinet', 'Anne-Laure Boinet'], habilitation: MAIRIE + LAIC + SOIREE},
-    {names: ['Julie & Hugo'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Marine Teral', 'Benoit'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Gabrielle Winter', 'Charles Mori'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Boris Valin', 'Louise Ott-Valin'], habilitation: MAIRIE + LAIC + SOIREE},
@@ -69,7 +68,8 @@ const validLogins = [
     {names: ['Natalie Brinon', 'Steeve Brinon', 'Achille Brinon'], habilitation: MAIRIE + LAIC},
     {names: ['Delphine Tanti', 'Louis Tanti-Cornet', 'Ines Tanti-Cornet'], habilitation: MAIRIE + LAIC},
     {names: ['Adrien Giacinti'], habilitation: MAIRIE + LAIC + SOIREE},
-    {names: ['Jennifer Hervé', 'Lucas Foucart'], habilitation: MAIRIE + LAIC},
+    {names: ['Phillipe Roure', 'Magda Roure'], habilitation: MAIRIE + LAIC},
+    {names: ['Rida Pagatele'], habilitation: MAIRIE + LAIC},
 ];
 
 // Helper function to normalize input (remove accents, lowercase, trim, and remove spaces)
