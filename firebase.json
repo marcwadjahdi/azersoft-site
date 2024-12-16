@@ -12,6 +12,18 @@
         "destination": "/wedding.html"
       },
       {
+        "source": "/jadeetmarc",
+        "destination": "/wedding.html"
+      },
+      {
+        "source": "/jade-&-marc",
+        "destination": "/wedding.html"
+      },
+      {
+        "source": "/jade&marc",
+        "destination": "/wedding.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

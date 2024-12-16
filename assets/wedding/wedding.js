@@ -53,7 +53,7 @@ const validLogins = [
     {names: ['Jade Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Robin Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Romane Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
-    {names: ['Renault Cornet', 'Sylvie Marboeuf', 'Claude Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Renaud Cornet', 'Sylvie Marboeuf', 'Claude Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Eric Esposito', 'Brigitte Esposito'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Philippe Guillou', 'Giliane Guillou', 'Loic Guillou'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Tanguy Boinet', 'Anne-Laure Boinet'], habilitation: MAIRIE + LAIC + SOIREE},
@@ -85,7 +85,9 @@ function normalizeInput(input) {
 // Check if login is valid by comparing normalized input with valid user IDs
 function findUser(login) {
     const normalizedLogin = normalizeInput(login ?? '');
-    return validLogins.find(user => user.names.map(normalizeInput).includes(normalizedLogin));
+    const normalizedReverse = normalizeInput(login?.split(' ')?.reverse()?.join('') ?? '')
+    const logins = [normalizedLogin, normalizedReverse]
+    return validLogins.find(user => user.names.map(normalizeInput).find(it => logins.includes(it)));
 }
 
 function autoLogin() {
