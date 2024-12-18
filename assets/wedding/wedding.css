@@ -342,11 +342,10 @@ h6, .h6 {
     font-size: 20px;
 }
 
-.planning-section .download-link {
-    color: var(--teracotta);
-    text-shadow: black 1px 1px 0;
-    font-weight: 600;
+.download-link {
     cursor: pointer;
+    color: var(--teracotta) !important;
+    font-weight: 600;
     margin: 4rem 0 0;
 }
 
@@ -363,6 +362,14 @@ h6, .h6 {
     top: 0.75rem;
 }
 
+.nota-bene {
+    display: inline-block;
+    background-color: #C3C3C3;
+    font-style: italic;
+    margin: 0.3rem 0;
+    padding: 0.2rem;
+    border: 1px solid #838383;
+}
 
 
 .timeline-section {
