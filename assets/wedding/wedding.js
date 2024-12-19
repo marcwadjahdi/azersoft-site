@@ -55,7 +55,7 @@ const validLogins = [
     {names: ['Romane Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Renaud Cornet', 'Sylvie Marboeuf', 'Claude Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Eric Esposito', 'Brigitte Esposito'], habilitation: MAIRIE + LAIC + SOIREE},
-    {names: ['Kevin Esposito',], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Kevin Esposito', 'Julie Touyrac'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Philippe Guillou', 'Giliane Guillou', 'Loic Guillou'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Tanguy Boinet', 'Anne-Laure Boinet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Marine Teral', 'Benoit'], habilitation: MAIRIE + LAIC + SOIREE},
