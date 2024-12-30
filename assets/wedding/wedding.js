@@ -29,9 +29,8 @@ function isInvitedTo(invitation, event) {
 
 // Step 1: Declare valid logins
 const validLogins = [
-    {names: ['Test1'], habilitation: MAIRIE + LAIC},
-    {names: ['Test2'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Agence Unicorn', 'Unicorn', 'Licorne', 'Gros la Corne'], habilitation: MAIRIE + LAIC + SOIREE},
+
     {names: ['Marc Wadjahdi', 'Kako', 'Mumble', 'Marcus Pupuce'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Corinne Wadjahdi', 'Coco des iles'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Jannick Wadjahdi', 'Kakounet'], habilitation: MAIRIE + LAIC + SOIREE},
@@ -47,7 +46,8 @@ const validLogins = [
     {names: ['Sebastien Perault', 'Khrystyna Perault'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Yverick Hermant'], habilitation: MAIRIE + LAIC},
     {names: ['Roby Didelot', 'Serge Didelot'], habilitation: MAIRIE + LAIC},
-    {names: ['Daniel Domergue', 'Marie-Francoise', 'Céline Domergue'], habilitation: MAIRIE + LAIC},
+    {names: ['Daniel Domergue', 'Marie-Francoise',], habilitation: MAIRIE + LAIC},
+    {names: ['Céline Domergue', 'Flavio'], habilitation: MAIRIE + LAIC},
     {names: ['Vincent Domergue', 'Christelle Domergue'], habilitation: MAIRIE + LAIC + SOIREE},
 
     {names: ['Jade Cornet'], habilitation: MAIRIE + LAIC + SOIREE},
@@ -59,7 +59,8 @@ const validLogins = [
     {names: ['Philippe Guillou', 'Giliane Guillou', 'Loic Guillou'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Tanguy Boinet', 'Anne-Laure Boinet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Marine Teral', 'Benoit'], habilitation: MAIRIE + LAIC + SOIREE},
-    {names: ['Gabrielle Winter', 'Charles Mori'], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Gabrielle Winter',], habilitation: MAIRIE + LAIC + SOIREE},
+    {names: ['Charles Mori'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Boris Valin', 'Louise Ott-Valin'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Pauline Feuillet'], habilitation: MAIRIE + LAIC + SOIREE},
     {names: ['Hadrian Moret'], habilitation: MAIRIE + LAIC + SOIREE},
